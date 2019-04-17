@@ -1,4 +1,4 @@
-// Name
+// Ryan Romero    CWID: 889823894
 // Section #
 #include <iostream>
 #include <fstream>
@@ -133,7 +133,7 @@ int main()
     NextCardNum = readPersons(cardholders);
     readRentals(books, cardholders)
 
-    int choice;
+    int choice = 0;
     do
     {
         // If you use cin anywhere, don't forget that you have to handle the <ENTER> key that
@@ -338,7 +338,16 @@ int main()
                 }
 
                 else if(myIT != nullptr){
-                // deactivate cardID
+                  bool temp = false;
+
+                  if(*myIT.isActive() == false){
+                    cout << "Card ID is already inactive." << endl;
+                  }
+                  else{
+                    *myIT.setActive(temp);
+                    cout << "Card ID deactivated." << endl;
+                  }
+                }
                 break;
 
             case 8:
@@ -352,4 +361,4 @@ int main()
         cout << endl;
    } while(choice != 8);
       return 0;
-}
+};
